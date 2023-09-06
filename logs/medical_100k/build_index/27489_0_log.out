@@ -1,0 +1,9 @@
+submitit INFO (2022-10-10 01:42:07,044) - Starting with JobEnvironment(job_id=27489, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-10 01:42:07,044) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/medical_100k/build_index/27489_submitted.pkl
+The following command is sent: "python train_index.py --dstore_mmap dstores/medical_100k/index_only.subset --dstore_size 100000 --dimension 512 --code_size 64 --ncentroids 4096 --train_index dstores/0medical_100k/index_only.4096.index.trained --from_subset --gpu"
+Namespace(code_size=64, dimension=512, dstore_fp16=False, dstore_mmap='dstores/medical_100k/index_only.subset', dstore_size=100000, from_subset=True, gpu=True, ncentroids=4096, probe=8, seed=1, train_index='dstores/0medical_100k/index_only.4096.index.trained')
+Training Index
+Moving index to gpu before training
+Training took 156.77884984016418 s
+Writing index after training
+submitit ERROR (2022-10-10 01:44:45,334) - Submitted job triggered an exception

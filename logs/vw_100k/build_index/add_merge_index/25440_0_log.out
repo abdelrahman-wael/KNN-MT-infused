@@ -1,0 +1,10 @@
+submitit INFO (2022-10-05 02:21:42,705) - Starting with JobEnvironment(job_id=25440, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-05 02:21:42,705) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/vw_100k/build_index/add_merge_index/25440_submitted.pkl
+The following command is sent: "python merge_index.py --faiss_index dstores/vw_100k/index_only.4096.index --train_index dstores/vw_100k/index_only.4096.index.trained --corpus_identifiers vw --write_index dstores/vw_100k/index_only.4096.index --num_shards_per_file 1"
+Namespace(corpus_identifiers=['vw'], faiss_index='dstores/vw_100k/index_only.4096.index', num_files_per_cid=1, num_shards_per_file=[1], start_num_files_per_cid=0, train_index='dstores/vw_100k/index_only.4096.index.trained', write_index='dstores/vw_100k/index_only.4096.index')
+Reading for dataset vw
+Reading index dstores/vw_100k/index_only.4096.index.vw.0
+merge 1 inverted lists
+resizing dstores/vw_100k/index_only.4096.index.merged_index.ivfdata to 125463384 bytes
+Size of datastore = 1742547
+submitit INFO (2022-10-05 02:21:43,827) - Job completed successfully

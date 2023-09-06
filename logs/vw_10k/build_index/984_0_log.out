@@ -1,0 +1,10 @@
+submitit INFO (2022-10-05 01:19:07,232) - Starting with JobEnvironment(job_id=984, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-05 01:19:07,233) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/vw_10k/build_index/984_submitted.pkl
+The following command is sent: "python train_index.py --dstore_mmap dstores/vw_10k/index_only.subset --dstore_size 10000 --dimension 512 --code_size 64 --ncentroids 4096 --train_index dstores/vw_10k/index_only.4096.index.trained --from_subset --gpu"
+Namespace(code_size=64, dimension=512, dstore_fp16=False, dstore_mmap='dstores/vw_10k/index_only.subset', dstore_size=10000, from_subset=True, gpu=True, ncentroids=4096, probe=8, seed=1, train_index='dstores/vw_10k/index_only.4096.index.trained')
+Training Index
+Moving index to gpu before training
+Training took 31.539602518081665 s
+Writing index after training
+Writing index took 0.006746768951416016 s
+submitit INFO (2022-10-05 01:19:40,476) - Job completed successfully

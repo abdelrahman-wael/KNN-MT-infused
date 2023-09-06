@@ -1,0 +1,6 @@
+submitit INFO (2022-10-05 02:44:25,483) - Starting with JobEnvironment(job_id=23065, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-05 02:44:25,483) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/vw_100k_from_1m/build_index/23065_submitted.pkl
+The following command is sent: "python merge_subset_dstores.py --dstore_mmap dstores/vw_100k/index_only --num_datasets 1 --size 100000"
+Namespace(dataset_start=0, dimension=512, dstore_mmap='dstores/vw_100k/index_only', langs=None, num_datasets=1, num_langs=1, size=100000)
+merged 100000 keys/values
+submitit INFO (2022-10-05 02:44:25,924) - Job completed successfully

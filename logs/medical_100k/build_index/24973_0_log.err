@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 337, in __call__
+    copy_process_streams(process, stdout_buffer, stderr_buffer, self.verbose)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 261, in copy_process_streams
+    ready = poller.poll()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 352, in __call__
+    raise FailedJobError(stderr) from subprocess_error
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/subprocess.py", line 768, in __exit__
+    self.stdout.close()
+KeyboardInterrupt

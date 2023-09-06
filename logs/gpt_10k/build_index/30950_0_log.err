@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "fairseq_cli/generate.py", line 553, in <module>
+    cli_main()
+  File "fairseq_cli/generate.py", line 549, in cli_main
+    main(args)
+  File "fairseq_cli/generate.py", line 41, in main
+    return _main(args, sys.stdout)
+  File "fairseq_cli/generate.py", line 76, in _main
+    task.load_dataset(args.gen_subset)
+  File "/home/ababouelenin/CustomTranslation/test_gen/knnmt/fairseq/tasks/translation.py", line 298, in load_dataset
+    shuffle=(split != 'test'),
+  File "/home/ababouelenin/CustomTranslation/test_gen/knnmt/fairseq/tasks/translation.py", line 133, in load_langpair_dataset
+    shuffle=shuffle,
+  File "/home/ababouelenin/CustomTranslation/test_gen/knnmt/fairseq/data/language_pair_dataset.py", line 194, in __init__
+    assert len(src) == len(tgt), "Source and target must contain the same number of examples"
+AssertionError: Source and target must contain the same number of examples
+submitit ERROR (2022-10-20 01:35:12,851) - Submitted job triggered an exception
+subprocess.CalledProcessError: Command '['python', 'fairseq_cli/generate.py', '/home/ababouelenin/CustomTranslation/knnmt/blob_data/data/CT_vw/wv_ct_data/gpt_10k/preprocessed', '--gen-subset', 'train', '--path', '/home/ababouelenin/CustomTranslation/knnmt/blob_data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt', '--beam', '5', '--remove-bpe', '--bpe', 'sentencepiece', '--num-workers', '35', '--max-sentences', '2', '-s', 'de', '-t', 'en', '--source-lang', 'de', '--target-lang', 'en', '--tokenizer', 'moses', '--moses-source-lang', 'de', '--moses-target-lang', 'en', '--sacrebleu', '--score-reference', '--dstore-mmap', 'dstores/gpt_10k/index_only.subset.0', '--knn-keytype', 'last_ffn_input', '--model-overrides', "{'knn_keytype':'last_ffn_input'}", '--save-knn-dstore', '--save-knn-subset', '--save-knn-subset-num', '10000']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 352, in __call__
+    raise FailedJobError(stderr) from subprocess_error
+submitit.core.utils.FailedJobError: Traceback (most recent call last):
+  File "fairseq_cli/generate.py", line 553, in <module>
+    cli_main()
+  File "fairseq_cli/generate.py", line 549, in cli_main
+    main(args)
+  File "fairseq_cli/generate.py", line 41, in main
+    return _main(args, sys.stdout)
+  File "fairseq_cli/generate.py", line 76, in _main
+    task.load_dataset(args.gen_subset)
+  File "/home/ababouelenin/CustomTranslation/test_gen/knnmt/fairseq/tasks/translation.py", line 298, in load_dataset
+    shuffle=(split != 'test'),
+  File "/home/ababouelenin/CustomTranslation/test_gen/knnmt/fairseq/tasks/translation.py", line 133, in load_langpair_dataset
+    shuffle=shuffle,
+  File "/home/ababouelenin/CustomTranslation/test_gen/knnmt/fairseq/data/language_pair_dataset.py", line 194, in __init__
+    assert len(src) == len(tgt), "Source and target must contain the same number of examples"
+AssertionError: Source and target must contain the same number of examples

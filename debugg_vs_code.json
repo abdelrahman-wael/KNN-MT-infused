@@ -1,0 +1,72 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+     // Hover to view descriptions of existing attributes.
+     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+     "version": "0.2.0",
+     "configurations": [
+         {
+             "name": "KNN-MT",
+             "type": "python",
+             "request": "launch",
+             "python": "/opt/conda/envs/CT/bin/python",
+             "program": "/home/ababouelenin/CustomTranslation/sequential_KNNMT/code/KNN-MT/fairseq_cli/generate.py",
+             "args": [
+                 "/home/ababouelenin/de_chunks/sent_spm_00005.bin",
+                 "--dstore-training-data","/home/ababouelenin/ds/test_sample_5.ds/encoded/bin",
+                 "--test-data","/home/ababouelenin/de_chunks/sent_spm_00005.bin",
+                 "--max-tokens",
+                 "4096",
+                 "--save-knn-dstore",
+                 "--gen-subset",
+                 "train",
+                 "--path",
+                 "/mnt/mainz01eus/ababouelenin/projects/CustomTranslation/debugging_node/knnmt/blob_data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt",
+                 "--adaptive-temperature",
+                 "100",
+                 "--bpe",
+                 "sentencepiece",
+                 "--beam",
+                 "1",
+                 "--remove-bpe",
+                 "--tokenizer",
+                 "moses",
+                 "--knn-add-to-idx",
+                 // "--save-knns",
+                 // "--save-knns-filename", "/home/ababouelenin/Maher_repo/save_knn/1m_data",
+                 "--moses-source-lang",
+                 "de",
+                 "--moses-target-lang",
+                 "en",
+                 "--sacrebleu",
+                 "--k",
+                 "1",
+                 "--probe",
+                 "32",
+                 "--indexfile",
+                 "/home/ababouelenin/ds/test_sample_0.ds/dstore_flatindexing/index_only.4096.index.vw.0",
+                 "--knn-keytype",
+                 "last_ffn_input",
+                 "--knn-embed-dim",
+                 "512",
+                 "--no-load-keys",
+                 "--knn-temp",
+                 "10",
+                 "--knn-sim-func",
+                 "do_not_recomp_l2",
+                 "--lmbda",
+                 "0.8",
+                 "--use-faiss-only"
+             ],
+             "console": "integratedTerminal",
+             "justMyCode": false
+             
+         }
+     ]
+ }
+ 
+ 
+ 
+ 
+# python /home/ababouelenin/CustomTranslation/KNN-MT/fairseq_cli/generate.py /home/ababouelenin/CustomTranslation/data/data/CT_vw/wv_ct_data/vw_1m/ende/encoded/bin --max-tokens 4096 --gen-subset test --path /mnt/mainz01eus/ababouelenin/projects/CustomTranslation/debugging_node/knnmt/blob_data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt --bpe sentencepiece --beam 1 --remove-bpe --tokenizer moses --moses-source-lang de --moses-target-lang en --sacrebleu --knnmt --k 1 --probe 32 --indexfile /home/ababouelenin/CustomTranslation/KNN-MT/dstores/vw_1m_flatindexing/index_only.4096.index.vw.0 --knn-keytype last_ffn_input --knn-embed-dim 512 --no-load-keys --knn-temp 10 --knn-sim-func do_not_recomp_l2 --lmbda 0.8 --max-sentences 1 --use-faiss-only
+ 
+# python fairseq_cli/generate.py /home/ababouelenin/ds/test_sample_0.ds/encoded/bin/ --gen-subset train --path /home/ababouelenin/CustomTranslation/data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt --beam 5 --remove-bpe --bpe sentencepiece  --tokenizer moses -s de -t en --moses-source-lang de --moses-target-lang en --sacrebleu --score-reference --knn-keytype last_ffn_input  --model-overrides {'knn_keytype':'last_ffn_input'} --num-workers 35 --save-knn-dstore --knn-add-to-idx --num-shards 1 --shard-id 0 --trained-index /home/ababouelenin/ds/test_sample_0.ds/dstore_flatindexing/index_only.4096.index.trained --write-index /home/ababouelenin/ds/test_sample_0.ds/dstore_flatindexing/index_only.4096.index.vw.0

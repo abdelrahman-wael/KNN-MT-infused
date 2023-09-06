@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "merge_subset_dstores.py", line 36, in <module>
+    keys = np.memmap(filename + "_keys.npy", dtype=np.float32, mode='r', shape=(args.size, args.dimension))
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/numpy/core/memmap.py", line 264, in __new__
+    mm = mmap.mmap(fid.fileno(), bytes, access=acc, offset=start)
+ValueError: mmap length is greater than file size
+submitit ERROR (2022-10-05 01:17:23,031) - Submitted job triggered an exception
+subprocess.CalledProcessError: Command '['python', 'merge_subset_dstores.py', '--dstore_mmap', 'dstores/vw_10k/index_only', '--num_datasets', '1', '--size', '100000']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 352, in __call__
+    raise FailedJobError(stderr) from subprocess_error
+submitit.core.utils.FailedJobError: Traceback (most recent call last):
+  File "merge_subset_dstores.py", line 36, in <module>
+    keys = np.memmap(filename + "_keys.npy", dtype=np.float32, mode='r', shape=(args.size, args.dimension))
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/numpy/core/memmap.py", line 264, in __new__
+    mm = mmap.mmap(fid.fileno(), bytes, access=acc, offset=start)
+ValueError: mmap length is greater than file size

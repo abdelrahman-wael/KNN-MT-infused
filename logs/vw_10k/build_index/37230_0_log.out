@@ -1,0 +1,46 @@
+submitit INFO (2022-10-05 01:16:27,829) - Starting with JobEnvironment(job_id=37230, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-05 01:16:27,829) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/vw_10k/build_index/37230_submitted.pkl
+The following command is sent: "python fairseq_cli/generate.py /home/ababouelenin/CustomTranslation/knnmt/blob_data/data/CT_vw/wv_ct_data/vw_100k/ende/encoded/bin --gen-subset train --path /home/ababouelenin/CustomTranslation/knnmt/blob_data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt --beam 5 --remove-bpe --bpe sentencepiece --num-workers 35 --max-sentences 2 -s de -t en --source-lang de --target-lang en --tokenizer moses --moses-source-lang de --moses-target-lang en --sacrebleu --score-reference --dstore-mmap dstores/vw_10k/index_only.subset.0 --knn-keytype last_ffn_input --model-overrides {'knn_keytype':'last_ffn_input'} --save-knn-dstore --save-knn-subset --save-knn-subset-num 100000"
+2022-10-05 01:16:30 | INFO | fairseq_cli.generate | Namespace(all_gather_list_size=16384, beam=5, bf16=False, bpe='sentencepiece', broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', cpu=False, criterion='cross_entropy', data='/home/ababouelenin/CustomTranslation/knnmt/blob_data/data/CT_vw/wv_ct_data/vw_100k/ende/encoded/bin', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoding_format=None, device_id=0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', diverse_beam_groups=-1, diverse_beam_strength=0.5, diversity_rate=-1.0, drop_lang_tok=False, dstore_filename=None, dstore_fp16=False, dstore_mmap='dstores/vw_10k/index_only.subset.0', dstore_size=9651607, empty_cache_freq=0, eval_bleu=False, eval_bleu_args=None, eval_bleu_detok='space', eval_bleu_detok_args=None, eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, faiss_metric_type='l2', fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, gen_subset='train', indexfile=None, iter_decode_eos_penalty=0.0, iter_decode_force_max_iter=False, iter_decode_max_iter=10, iter_decode_with_beam=1, iter_decode_with_external_reranker=False, k=1024, knn_add_idx_global_id=None, knn_add_idx_pos_in_dataset=None, knn_add_num_to_idx=10000000, knn_add_to_idx=False, knn_backoff=False, knn_backoff_thresh=None, knn_embed_dim=None, knn_keytype='last_ffn_input', knn_proc=-1, knn_q2gpu=False, knn_sim_func=None, knn_start=-1, knn_temp=1.0, knn_trim_data=False, knnmt=False, left_pad_source='True', left_pad_target='False', lenpen=1, lmbda=0.0, load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_len_a=0, max_len_b=200, max_sentences=2, max_source_positions=1024, max_target_positions=1024, max_tokens=None, memory_efficient_bf16=False, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, model_overrides="{'knn_keytype':'last_ffn_input'}", model_parallel_size=1, momentum=0.99, moses_no_dash_splits=False, moses_no_escape=False, moses_source_lang='de', moses_target_lang='en', move_dstore_to_mem=False, nbest=1, no_beamable_mm=False, no_early_stop=False, no_load_keys=False, no_progress_bar=False, no_repeat_ngram_size=0, no_seed_provided=True, nprocs_per_node=8, num_batch_buckets=0, num_shards=1, num_workers=35, optimizer='nag', path='/home/ababouelenin/CustomTranslation/knnmt/blob_data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt', prefix_size=0, print_alignment=False, print_step=False, probe=8, profile=False, quantization_config_path=None, quiet=False, remove_bpe='@@ ', replace_unk=None, required_batch_size_multiple=8, results_path=None, retain_dropout=False, retain_dropout_modules=None, retain_iter_history=False, sacrebleu=True, sampling=False, sampling_topk=-1, sampling_topp=-1.0, save_knn_dstore=True, save_knn_subset=True, save_knn_subset_num=100000, save_knns=False, save_knns_filename=None, score_reference=True, scoring='bleu', seed=1, sentencepiece_model='/home/ababouelenin/CustomTranslation/knnmt/blob_data/vocab/deen_spm/sentencepiece.bpe.model', shard_id=0, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang='de', target_lang='en', task='translation', temperature=1.0, tensorboard_logdir='', threshold_loss_scale=None, tokenizer='moses', tpu=False, trained_index=None, truncate_source=False, unkpen=0, unnormalized=False, upsample_primary=1, use_faiss_only=False, user_dir=None, warmup_updates=0, weight_decay=0.0, write_index=None)
+2022-10-05 01:16:30 | INFO | fairseq.tasks.translation | [de] dictionary: 32001 types
+2022-10-05 01:16:30 | INFO | fairseq.tasks.translation | [en] dictionary: 32001 types
+2022-10-05 01:16:30 | INFO | fairseq.data.data_utils | loaded 100000 examples from: /home/ababouelenin/CustomTranslation/knnmt/blob_data/data/CT_vw/wv_ct_data/vw_100k/ende/encoded/bin/train.de-en.de
+2022-10-05 01:16:30 | INFO | fairseq.data.data_utils | loaded 100000 examples from: /home/ababouelenin/CustomTranslation/knnmt/blob_data/data/CT_vw/wv_ct_data/vw_100k/ende/encoded/bin/train.de-en.en
+2022-10-05 01:16:30 | INFO | fairseq.tasks.translation | /home/ababouelenin/CustomTranslation/knnmt/blob_data/data/CT_vw/wv_ct_data/vw_100k/ende/encoded/bin train de-en 100000 examples
+2022-10-05 01:16:30 | INFO | fairseq_cli.generate | loading model(s) from /home/ababouelenin/CustomTranslation/knnmt/blob_data/training_dir/checkpoints_deen_pretrained/checkpoint_best.pt
+keytype being saved: last_ffn_input
+Saving fp32
+2022-10-05 01:16:39 | INFO | fairseq.logging.progress_bar | :    101 / 50000 wps=1186
+2022-10-05 01:16:40 | INFO | fairseq.logging.progress_bar | :    201 / 50000 wps=1653
+2022-10-05 01:16:42 | INFO | fairseq.logging.progress_bar | :    301 / 50000 wps=1799
+2022-10-05 01:16:43 | INFO | fairseq.logging.progress_bar | :    401 / 50000 wps=1928
+2022-10-05 01:16:44 | INFO | fairseq.logging.progress_bar | :    501 / 50000 wps=1976
+2022-10-05 01:16:46 | INFO | fairseq.logging.progress_bar | :    601 / 50000 wps=2072
+2022-10-05 01:16:47 | INFO | fairseq.logging.progress_bar | :    701 / 50000 wps=2106
+2022-10-05 01:16:49 | INFO | fairseq.logging.progress_bar | :    801 / 50000 wps=2118
+2022-10-05 01:16:50 | INFO | fairseq.logging.progress_bar | :    901 / 50000 wps=2143
+2022-10-05 01:16:52 | INFO | fairseq.logging.progress_bar | :   1001 / 50000 wps=2147
+2022-10-05 01:16:53 | INFO | fairseq.logging.progress_bar | :   1101 / 50000 wps=2181
+2022-10-05 01:16:55 | INFO | fairseq.logging.progress_bar | :   1201 / 50000 wps=2164
+2022-10-05 01:16:56 | INFO | fairseq.logging.progress_bar | :   1301 / 50000 wps=2179
+2022-10-05 01:16:58 | INFO | fairseq.logging.progress_bar | :   1401 / 50000 wps=2203
+2022-10-05 01:16:59 | INFO | fairseq.logging.progress_bar | :   1501 / 50000 wps=2218
+2022-10-05 01:17:01 | INFO | fairseq.logging.progress_bar | :   1601 / 50000 wps=2237
+2022-10-05 01:17:02 | INFO | fairseq.logging.progress_bar | :   1701 / 50000 wps=2247
+2022-10-05 01:17:04 | INFO | fairseq.logging.progress_bar | :   1801 / 50000 wps=2256
+2022-10-05 01:17:05 | INFO | fairseq.logging.progress_bar | :   1901 / 50000 wps=2257
+2022-10-05 01:17:07 | INFO | fairseq.logging.progress_bar | :   2001 / 50000 wps=2254
+2022-10-05 01:17:08 | INFO | fairseq.logging.progress_bar | :   2101 / 50000 wps=2252
+2022-10-05 01:17:10 | INFO | fairseq.logging.progress_bar | :   2201 / 50000 wps=2253
+2022-10-05 01:17:11 | INFO | fairseq.logging.progress_bar | :   2301 / 50000 wps=2257
+2022-10-05 01:17:13 | INFO | fairseq.logging.progress_bar | :   2401 / 50000 wps=2255
+2022-10-05 01:17:14 | INFO | fairseq.logging.progress_bar | :   2501 / 50000 wps=2256
+2022-10-05 01:17:16 | INFO | fairseq.logging.progress_bar | :   2601 / 50000 wps=2246
+2022-10-05 01:17:17 | INFO | fairseq.logging.progress_bar | :   2701 / 50000 wps=2248
+2022-10-05 01:17:19 | INFO | fairseq.logging.progress_bar | :   2801 / 50000 wps=2249
+dstore_idx 100000 final number of items added 0 total saved 100000
+Keys (100000, 512) float32
+Vals (100000, 1) int64
+2022-10-05 01:17:20 | INFO | fairseq_cli.generate | NOTE: hypothesis and token scores are output in base 2
+2022-10-05 01:17:20 | INFO | fairseq_cli.generate | Translated 5794 sentences (100015 tokens) in 39.2s (147.88 sentences/s, 2552.71 tokens/s)
+submitit INFO (2022-10-05 01:17:22,111) - Job completed successfully

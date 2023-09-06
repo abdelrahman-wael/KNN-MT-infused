@@ -1,0 +1,33 @@
+fairseq_cli/generate.py:212: UserWarning: --sacrebleu is deprecated. Please use --scoring sacrebleu instead.
+  scorer = scoring.scoring_utils.build_scorer(args, tgt_dict)
+submitit WARNING (2022-10-05 01:15:42,025) - Caught signal SIGUSR2 on az-eus-v100-32gb-6-worker-00093: this job is timed-out.
+submitit ERROR (2022-10-05 01:15:42,060) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 337, in __call__
+    copy_process_streams(process, stdout_buffer, stderr_buffer, self.verbose)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 261, in copy_process_streams
+    ready = poller.poll()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/job_environment.py", line 226, in checkpoint_and_try_requeue
+    raise utils.UncompletedJobError(message)
+submitit.core.utils.UncompletedJobError: Job not requeued because: timed-out and not checkpointable.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 341, in __call__
+    raise FailedJobError("Job got killed for an unknown reason.") from e
+submitit.core.utils.FailedJobError: Job got killed for an unknown reason.

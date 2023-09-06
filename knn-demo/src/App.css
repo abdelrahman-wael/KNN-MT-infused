@@ -1,0 +1,105 @@
+/* .App { */
+	/* padding: 50px; */
+	/* padding-top: 30px; */
+	
+    /* background-color: #eef3f854; */
+
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+.logo-container {
+	/* display: flex; */
+	align-items: center;
+	gap: 50px;
+	
+	padding: 40px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #1F4E78;
+	color: #ffffff;
+}
+
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	/* color: #61dafb; */
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.tableContainer {
+	display: flex;
+	width: 100%;
+	gap: 20px;
+}
+
+.itemContainer-98 {
+	padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+}
+
+.root-97{
+	padding-left: 42px;
+    padding-right: 42px;
+    background-color: #d3e5f5;
+}
+
+.textField {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 20px;
+	margin: 20px;
+}
+
+.id {
+	width: 300px;
+}
+
+.textFieldLong {
+	width: 100%;
+}
+
+.input {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.getIndex {
+	width: 200px;
+	margin-left: auto;
+	margin-top: 20px;
+}

@@ -1,0 +1,98 @@
+description: CT
+target:
+  service: sing
+  name: lang-sing-mtres-eu
+  workspace_name: language-sing-mtres-ws01-eus
+
+environment:
+  image: pte-stable-ubuntu2004-cu115-py38-torch1110:latest #  mainz.azurecr.io/dev_moe:liyang  # mainz.azurecr.io/mainz_debug:mnlx-test4 # mainz.azurecr.io/mainz_debug:dev_moe
+  registry: mainz.azurecr.io
+  username: mainz
+  setup:
+  - sudo chmod 777 -R /opt/conda/lib/python3*/
+  - sudo chmod 777 /opt/conda/bin/pip
+  - sudo chmod 777 -R /opt/conda/
+  - pip install --user hydra-core
+  - pip install ruamel_yaml
+  - pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html --progress-bar off
+  - pip install deepspeed@git+https://github.com/microsoft/DeepSpeed@1bc13fe83fb3dbf8da08faf21ecdc9dc741f4945
+  - python -m pip install -r /mnt/sdrgmainzprm/zcodetasks/code/mogabr-codes/moe_experiments/ZCode/requirements.txt
+  - mkdir maher_repo_copy
+  - cp -r /mnt/mainz01eus/ababouelenin/projects/CustomTranslation/debugging_node/maher_repo_copy_t100 ~/maher_repo_copy
+  - mkdir KNN-MT
+  - cp -r /mnt/mainz01eus/mohamedmaher/ctv2/ctv2/KNN-MT ~/KNN-MT
+  - sudo apt update
+  - sudo apt-get -y upgrade
+  - sudo apt-get -y install libboost-all-dev
+  - cd ~/KNN-MT 
+  - pip install --editable .
+  - echo "installing dependancies..."
+  - /mnt/mtcairogroup/Users/mohamedmaher/code/install_KNN_MT_dependancies.sh
+  
+storage:
+  exp2:
+    storage_account_name: mainzprmblob01eus
+    container_name: user
+    mount_dir: /mnt/main_storage
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+
+  exp:
+    storage_account_name: sdrgprmblob01scus
+    container_name: user
+    mount_dir: /mnt/main_storage2
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+
+  exp3:
+    storage_account_name: mttadatastorage
+    container_name: mtdatastore
+    mount_dir: /mnt/mtdatastore
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+
+  exp4:
+    storage_account_name: mttadatastorage
+    container_name: mtcairogroup
+    mount_dir: /mnt/mtcairogroup
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+
+  exp5:
+    storage_account_name: mainz01eus
+    container_name: user
+    mount_dir: /mnt/mainz01eus
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+
+  cheap:
+    storage_account_name: sdrgstd01scus
+    container_name: user
+    mount_dir: /mnt/cheap_storage
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+  
+  sdrgmainzprmblob01wus2:
+    storage_account_name: sdrgmainzprmblob01wus2
+    container_name: user
+    mount_dir: /mnt/sdrgmainzprm
+    mount_options: ["--file-cache-timeout-in-seconds=60"]
+
+jobs:
+- name: CT_Trial_test
+  sku: 1xG8 
+  # sku: ND40r_v2:1x32G8-V100
+  process_count_per_node: 1
+  mpi: false
+  command:
+  - sudo apt update
+  - sudo apt-get -y upgrade
+  - sudo apt-get -y install libboost-all-dev
+  - cd ~/KNN-MT 
+  - pip install --editable .
+  - echo "installing dependancies..."
+  - /mnt/mtcairogroup/Users/mohamedmaher/code/install_KNN_MT_dependancies.sh
+  - pip install flask
+  - pip install Levenshtein
+  - pip install flask_cors
+  - pip install unbabel-comet
+  - echo "finished installing, starting to sleep!"
+  - sleep infinity
+  submit_args:
+    env:
+      AMLT_SSH_KEY_PATH: "C:\\Users\\mohamedmaher\\.ssh"
+      NCCL_IB_DISABLE: 0

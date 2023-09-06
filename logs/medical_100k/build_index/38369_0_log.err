@@ -1,0 +1,2 @@
+fairseq_cli/generate.py:212: UserWarning: --sacrebleu is deprecated. Please use --scoring sacrebleu instead.
+  scorer = scoring.scoring_utils.build_scorer(args, tgt_dict)

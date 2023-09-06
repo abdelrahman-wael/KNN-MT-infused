@@ -1,0 +1,36 @@
+WARNING clustering 100000 points to 4096 centroids: please provide at least 159744 training points
+Traceback (most recent call last):
+  File "train_index.py", line 58, in <module>
+    faiss.write_index(index, args.train_index)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/faiss/swigfaiss.py", line 9843, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in faiss::FileIOWriter::FileIOWriter(const char*) at /project/faiss/faiss/impl/io.cpp:98: Error: 'f' failed: could not open dstores/0medical_100k/index_only.4096.index.trained for writing: No such file or directory
+submitit ERROR (2022-10-10 01:44:45,334) - Submitted job triggered an exception
+subprocess.CalledProcessError: Command '['python', 'train_index.py', '--dstore_mmap', 'dstores/medical_100k/index_only.subset', '--dstore_size', '100000', '--dimension', '512', '--code_size', '64', '--ncentroids', '4096', '--train_index', 'dstores/0medical_100k/index_only.4096.index.trained', '--from_subset', '--gpu']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/submitit/core/utils.py", line 352, in __call__
+    raise FailedJobError(stderr) from subprocess_error
+submitit.core.utils.FailedJobError: WARNING clustering 100000 points to 4096 centroids: please provide at least 159744 training points
+Traceback (most recent call last):
+  File "train_index.py", line 58, in <module>
+    faiss.write_index(index, args.train_index)
+  File "/home/ababouelenin/.conda/envs/test/lib/python3.6/site-packages/faiss/swigfaiss.py", line 9843, in write_index
+    return _swigfaiss.write_index(*args)
+RuntimeError: Error in faiss::FileIOWriter::FileIOWriter(const char*) at /project/faiss/faiss/impl/io.cpp:98: Error: 'f' failed: could not open dstores/0medical_100k/index_only.4096.index.trained for writing: No such file or directory

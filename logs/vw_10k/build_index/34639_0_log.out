@@ -1,0 +1,5 @@
+submitit INFO (2022-10-05 01:11:31,489) - Starting with JobEnvironment(job_id=34639, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-05 01:11:31,489) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/vw_10k/build_index/34639_submitted.pkl
+The following command is sent: "python merge_subset_dstores.py --dstore_mmap dstores/vw_10k/index_only --num_datasets 1 --size 10000"
+Namespace(dataset_start=0, dimension=1024, dstore_mmap='dstores/vw_10k/index_only', langs=None, num_datasets=1, num_langs=1, size=10000)
+submitit ERROR (2022-10-05 01:11:31,635) - Submitted job triggered an exception

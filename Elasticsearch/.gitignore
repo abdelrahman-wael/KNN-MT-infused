@@ -1,0 +1,6 @@
+log*
+tmp*
+run.sh
+__pycache__
+test.py
+out*

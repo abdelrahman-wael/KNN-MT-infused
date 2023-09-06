@@ -1,0 +1,10 @@
+submitit INFO (2022-10-10 02:02:17,701) - Starting with JobEnvironment(job_id=33322, hostname=az-eus-v100-32gb-6-worker-00093, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2022-10-10 02:02:17,701) - Loading pickle: /home/ababouelenin/CustomTranslation/test_gen/knnmt/logs/medical_100k/build_index/33322_submitted.pkl
+The following command is sent: "python train_index.py --dstore_mmap dstores/medical_100k/index_only.subset --dstore_size 248099 --dimension 512 --code_size 64 --ncentroids 4096 --train_index dstores/medical_100k/index_only.4096.index.trained --from_subset --gpu"
+Namespace(code_size=64, dimension=512, dstore_fp16=False, dstore_mmap='dstores/medical_100k/index_only.subset', dstore_size=248099, from_subset=True, gpu=True, ncentroids=4096, probe=8, seed=1, train_index='dstores/medical_100k/index_only.4096.index.trained')
+Training Index
+Moving index to gpu before training
+Training took 165.78390455245972 s
+Writing index after training
+Writing index took 0.007077693939208984 s
+submitit INFO (2022-10-10 02:05:05,004) - Job completed successfully
